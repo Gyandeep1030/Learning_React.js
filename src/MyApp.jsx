@@ -402,8 +402,8 @@ let MyApp = () => {
             <br/>
             <br/>
             <h2>Name : {Stu.name}</h2>
-            <h2>Name : {Stu.age}</h2>
-            <h2>Name : {Stu.roll}</h2>
+            <h2>age : {Stu.age}</h2>
+            <h2>roll : {Stu.roll}</h2>
 
 
         </center>
