@@ -219,7 +219,7 @@ export default ChildComponent;
 
 // ? ========= prop types ==============
 
-
+/*
 import PropTypes from "prop-types";
 
 
@@ -251,3 +251,47 @@ ChildComponent.propTypes = {
 };
 
 export default ChildComponent;
+
+*/
+
+import style from "./Store.module.css";
+
+let Products = (props) => {
+
+    let {products , setproducts} = props;
+
+    return (
+        <>
+        <section>
+            {
+                products.map((val  , ind) => 
+                {return <>
+                <article >
+                
+                     <div id={style.imagePart}  >
+                         <img src={val.image} alt=""/>
+                     </div>
+                     
+                     
+                     <div id={style.infoPart} >
+                         <div>{val.title}</div>
+                         <div>Price : {val.price}</div>
+                         <div>free delivery</div>
+                         <div>
+                             <span>Rating: {val.rating.rate}</span>
+                             <span>     ||    </span>
+                             <span>Reviews: {val.rating.count}</span>
+                         </div>
+                     </div>
+                </article>
+                 </>
+                 } )
+            }
+
+        </section>
+        </>
+
+
+    )
+}
+export default Products;

@@ -377,7 +377,7 @@ let MyApp = () => {
 
   */
 
-
+/*
   let MyApp = () => {
 
     let student1 = {name :"Gyandeep"  , roll : 1  , age: 20  };
@@ -413,3 +413,84 @@ let MyApp = () => {
 
   }
   export default MyApp;
+
+  */
+
+import assestsData from "./Assets/Assets";
+import Products from "./ChildComponents";
+import style from "./Store.module.css";
+
+let app = () => {
+
+    
+
+    let products = assestsData.fakestore.products;
+
+    let[data , setdata] = useState(products);
+    console.log(data)
+
+
+    let alldata = () => {
+       setdata(products)
+    }
+    
+    let mansdata = () => {
+        let filtermans = []
+        products.map((val  , ind) => {
+            if(val.category === "men's clothing") {
+                filtermans.push(val)
+                
+            }
+        });
+        setdata(filtermans)
+    }
+
+    let womensdata = () => {
+        let filterwomens = []
+        products.map((val  , ind) => {
+            if(val.category === "women's clothing") {
+                filterwomens.push(val)
+                
+            }
+        });
+        setdata(filterwomens)
+    }
+
+    let jewelerydata = () => {
+        let filterjewelery = []
+        products.map((val  , ind) => {
+            if(val.category === "jewelery") {
+                filterjewelery.push(val)
+                
+            }
+        });
+        setdata(filterjewelery)
+    }
+
+    let electronicdata = () => {
+        let filterelectronics = []
+        products.map((val  , ind) => {
+            if(val.category === "electronics") {
+                filterelectronics.push(val)
+                
+            }
+        });
+        setdata(filterelectronics)
+    }
+
+    return(
+        <center>
+        <h1 id={style.mainTitle}>Welcome to My Store</h1>
+        <br></br>
+        <button onClick={alldata}>ALL</button>
+        <button onClick={mansdata}>MAN</button>
+        <button onClick={womensdata}>Womens</button>
+        <button onClick={jewelerydata}>jewelery </button>
+        <button onClick={electronicdata}>Electronic</button>
+
+        <Products products = {data}></Products>
+        </center>
+    )
+
+}
+export default app;
