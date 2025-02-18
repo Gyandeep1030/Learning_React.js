@@ -35,8 +35,6 @@ export default App;
 
 */
 
-import { useState } from "react";
-
 /*
 let App = () => {
     let name = "Gyandeep";
@@ -416,6 +414,8 @@ let MyApp = () => {
 
   */
 
+  /*
+
 import assestsData from "./Assets/Assets";
 import Products from "./ChildComponents";
 import style from "./Store.module.css";
@@ -494,3 +494,23 @@ let app = () => {
 
 }
 export default app;
+
+*/
+import S1 from "./LearnAPI/S1";
+import S2 from "./LearnAPI/S2";
+
+const MyApp = () => {
+
+    return (
+        
+            <>
+                <h1>------------Task Date - 02/18/2025 --------</h1>
+                <br/>
+                <S1 data = {1} />
+                <S2 data ={2}/>
+            </>
+
+    );
+};
+
+export default MyApp;

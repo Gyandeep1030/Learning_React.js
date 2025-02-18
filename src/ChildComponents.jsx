@@ -254,6 +254,8 @@ export default ChildComponent;
 
 */
 
+/*
+
 import style from "./Store.module.css";
 
 let Products = (props) => {
@@ -295,3 +297,7 @@ let Products = (props) => {
     )
 }
 export default Products;
+
+*/
+
+

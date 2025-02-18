@@ -17,5 +17,7 @@ console.log(root);
 
 root.render("Hello World!!!"); // string
 root.render(<h1>Gyandeep Kumar</h1>); // jsx element
+
+
 root.render(<MyApp></MyApp>); // Component
 root.render(<MyApp />); // Component
