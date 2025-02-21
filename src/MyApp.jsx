@@ -731,6 +731,7 @@ export default app;
 */
 
 //--------------------------------Sum of 2 Number--------------------
+/*
 
 let app = () => {
 
@@ -774,4 +775,43 @@ let app = () => {
 }
 export default app;
 
+*/
+//-----------------------------------------Task-3---------------------------------
+
+
+
+let app = () => {
+
+    let [Name , setName] = useState("");
+    let [Mail , setMail] = useState("");
+    let [Number , setNumber] = useState("");
+
+
+    return(
+        <center>
+            <h1>Name : {Name} </h1>
+            <h1>Mail : {Mail} </h1>
+            <h1>Number : {Number}</h1>
+
+            <form>
+                <p><label></label>Name<input type="text" value={Name} onChange={(x)=>{setName(x.target.value)}} ></input><br/></p>
+                <p><label></label>Mail<input type="text" value={Mail} onChange={(x)=>{setMail(x.target.value)}}></input><br/></p>
+                <p><label></label>Number<input type="text" value={Number} onChange={(x)=>{setNumber(x.target.value)}}></input><br/></p>
+                <button>Submit</button>
+            </form>
+
+            <form>
+                <p><label></label>Name<input type="text" value={Name} onChange={(x)=>{setName(x.target.value)}} ></input><br/></p>
+                <p><label></label>Mail<input type="text" value={Mail} onChange={(x)=>{setMail(x.target.value)}}></input><br/></p>
+                <p><label></label>Number<input type="text" value={Number} onChange={(x)=>{setNumber(x.target.value)}}></input><br/></p>
+                <button>Submit</button>
+            </form>
+
+        
+        </center>
+    )
+
+
+}
+export default app;
 
