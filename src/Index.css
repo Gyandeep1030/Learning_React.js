@@ -1,24 +1,89 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-h1{
-    text-align: center;
-    color: blue;
-}
-
-#container{
-    border:2px solid;
+.Main-Back {
+    width: 100%;
+    height: 1000px;
+    background-color: #444;
+    color: #f0e7e7;
     display: flex;
-    justify-content: space-evenly;
-    background-color: teal;
-}
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top */
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 20px; /* Add padding for visual spacing */
+  }
+  
+  .title {
+    font-size: 2em; /* Or whatever font size you prefer */
+  }
 
-.items {
-    border: solid white;
-    float: 1;
-    padding: 10px;
-    text-align: center;
-}
+.sidebar {
+    width: 0px;
+    background-color: #1a1a1a; /* Light black background */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: #171717; /* Light text color for better contrast */
+  }
+  
+  .sidebar.open {
+    width: 250px;
+  }
+  
+  .sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-nav ul li {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    color: #ffffff; /* Light text color */
+  }
+  
+  .toggle-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #302b2b; /* Darker button for contrast */
+    color: #f0e7e7;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .toggle-button:hover {
+    background-color: #444; /* Slightly darker hover */
+  }
+  
+  .app-container {
+    display: flex;
+  }
+  
+  .content {
+    flex-grow: 1;
+    margin-left: 0;
+    transition: margin-left 0.5s;
+    padding: 16px;
+    background-color: #222; /* Optional: Darker main content background */
+    color: #f3eeee;
+  }
+  
+  .content-open {
+    margin-left: 250px;
+  }
+
+
+  
+.menu-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+  }

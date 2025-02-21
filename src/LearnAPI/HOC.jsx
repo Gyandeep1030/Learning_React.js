@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const HOC = Component => {
+
+    
     return (
         (data) => {
+        
             return <Component Count = {data.data}></Component>
         }
     )

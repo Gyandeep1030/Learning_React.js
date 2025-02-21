@@ -13,7 +13,7 @@ const  S1 = (prop) => {
         <button onClick={() =>setCount(Count+1)}>Increse by 1</button>
         <button onClick={() =>setCount(prop.Count)}>Reset</button>
         <button onClick={() =>setCount(Count-1)}>Decrement by 1</button>
-
+        <button onClick={() =>setCount(Math.random)}>Take random value</button>
     </center> );
 }
 

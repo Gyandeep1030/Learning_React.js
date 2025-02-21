@@ -35,6 +35,9 @@ export default App;
 
 */
 
+import { number } from "prop-types";
+import { useRef, useState } from "react";
+
 /*
 let App = () => {
     let name = "Gyandeep";
@@ -496,6 +499,8 @@ let app = () => {
 export default app;
 
 */
+
+/*
 import S1 from "./LearnAPI/S1";
 import S2 from "./LearnAPI/S2";
 
@@ -514,3 +519,259 @@ const MyApp = () => {
 };
 
 export default MyApp;
+
+
+*/
+
+/*
+1. if , if-else , else-if , Switch
+
+2. ternery operater
+
+3. Logical operater
+
+/*
+
+
+const MyApp = () => {
+    let [num , setnum] = useState(0)
+
+    if(num % 2 === 0){
+
+        return (
+            <center>
+                <h1>------------Task Date - 02/19/2025 --------</h1>
+                <br/>
+
+                <h2>The Given Number is Divisible by 2</h2>
+                <br/>
+                <br/>
+                <br/>
+                <button onClick={() => {setnum(num+1)}}>Increse</button>
+            </center>
+        );
+    }
+    else if(num % 3 === 0){
+
+        return (
+            <center>
+                <h1>------------Task Date - 02/19/2025 --------</h1>
+                <br/>
+
+                <h2>The Given Number is Divisible by 3</h2>
+                <button onClick={() => {setnum(num+1)}}>Increse</button>
+            </center>
+        );
+    }
+    else if(num % 4 === 0){
+
+        return (
+            <center>
+                <h1>------------Task Date - 02/19/2025 --------</h1>
+                <br/>
+
+                <h2>The Given Number is Divisible by 4</h2>
+                <button onClick={() => {setnum(num+1)}}>Increse</button>
+            </center>
+        );
+    }
+    else if(num % 5 === 0){
+
+        return (
+            <center>
+                <h1>------------Task Date - 02/19/2025 --------</h1>
+                <br/>
+
+                <h2>The Given Number is Divisible by 5</h2>
+                <button onClick={() => {setnum(num+1)}}>Increse</button>
+            </center>
+        );
+    }
+    else if(num % 1 === 0){
+
+        return (
+            <center>
+                <h1>------------Task Date - 02/19/2025 --------</h1>
+                <br/>
+
+                <h2>The Given Number is Divisible by 1</h2>
+                <button onClick={() => {setnum(num+1)}}>Increse</button>
+            </center>
+        );
+    }
+
+
+    let [Male , setMale] = useState(true);
+
+    return(
+        <>
+            <h1>Ternery Operater</h1>
+            <button onAbort={() => {setMale(false)}}>Female</button>
+            <button onAbort={() => {setMale(true)}}>Male</button>
+            {Male ? return (<h2>Male</h2>) : return (<h2>Female</h2>)}
+        
+        </>
+    )
+    
+   
+};
+
+export default MyApp;
+
+*/
+
+
+
+
+
+// ------------------------------------------------------- Toggle Task -----------------------------------------------
+/*
+let App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+
+
+    <div className="Main-Back">
+        <h1 className="title" >GYANI.AI</h1>
+    </div>
+    
+
+        
+
+        <button className="toggle-button" onClick={toggleSidebar}>
+            {isOpen ? 'Close' : 'Open'}
+        </button>
+
+        <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+            <nav className="sidebar-nav">
+                <ul>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
+    </>
+  );
+};
+
+export default App;
+*/
+
+
+//--------------------------------21/2/2025-----------------------------
+/*
+let app = () => {
+
+    let NameRef = useRef();
+    let MailRef = useRef();
+    let NumberRef = useRef();
+
+
+    let handleSubmit = s => {
+        s.preventDefault();
+
+        console.log(`Name : ${NameRef.current.value} Mail : ${MailRef.current.value} Number : ${NumberRef.current.value}`);
+    }
+
+
+
+
+    return(
+        <center>
+            <h1>Date - 2/21/2025</h1>
+
+            <form onSubmit={handleSubmit}>
+                <label></label>Name<input type="text" ref={NameRef}></input><br/>
+                <label></label>Mail ID<input type="text" ref={MailRef}></input><br/>
+                <label></label>Phone Number<input type="text" ref={NumberRef}></input><br/>
+                <button>Submit</button>
+            </form>
+        
+        
+        
+        </center>
+    )
+
+
+}
+export default app;
+
+*/
+
+//--------------------------------Sum of 2 Number--------------------
+
+let app = () => {
+
+    let firstNum = useRef();
+    let SecondNum = useRef();
+    let ThreeNum = useRef();
+    let [Ans , setAns] = useState("");
+
+
+    let handleSubmit = s => {
+        s.preventDefault();
+        let x = Number(firstNum.current.value) + Number(SecondNum.current.value) + Number(ThreeNum.current.value)
+
+        setAns(x);
+    }
+
+
+
+
+    return(
+        <center>
+            <h1>SUM - {Ans}</h1>
+
+            <form onSubmit={handleSubmit}>
+                <p><label></label>1st Number<input type="text" ref={firstNum}></input><br/>  </p>
+                <p><label></label>2nd Number<input type="text" ref={SecondNum}></input><br/></p>
+                <p><label></label>3rd Number<input type="text" ref={ThreeNum}></input><br/></p>
+                <button>Submit</button>
+            </form>
+
+            {Ans && <h2>Answer is {Ans}</h2>}
+
+            
+        
+        
+        
+        </center>
+    )
+
+
+}
+export default app;
+
+
