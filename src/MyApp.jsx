@@ -778,8 +778,7 @@ export default app;
 */
 //-----------------------------------------Task-3---------------------------------
 
-
-
+/*
 let app = () => {
 
     let [Name , setName] = useState("");
@@ -815,3 +814,75 @@ let app = () => {
 }
 export default app;
 
+*/
+
+/*
+
+import React from 'react'
+
+class MyApp extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            Counter : 0,
+        }
+
+    }
+
+  render() {
+    return (
+      <center>
+        <h1>Counter - {this.state.Counter}</h1>
+        <button onClick={()=>{this.setState({ Counter : this.state.Counter+1})}}>Increse</button>
+        <button onClick={()=>{this.setState({ Counter : this.state.Counter-1})}}>Decrese</button>
+        <button onClick={()=>{this.setState({ Counter : 0})}}>Reset</button>
+      
+      
+      </center>
+    )
+  }
+}
+export default MyApp;
+
+*/
+
+
+
+import React from 'react'
+
+class MyApp extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            Counter1 : 0,
+            Counter2 : 0,
+            Counter3 : 0,
+        }
+
+    }
+
+  render() {
+    return (
+      <center>
+        <h1>Counter 1 = {this.state.Counter1}</h1>
+        <button onClick={()=>{this.setState({ Counter1 : this.state.Counter1+1})}}>Increse</button>
+        <button onClick={()=>{this.setState({ Counter1 : this.state.Counter1-1})}}>Decrese</button>
+        <button onClick={()=>{this.setState({ Counter1 : 0})}}>Reset</button>
+
+        <h1>Counter 2 = {this.state.Counter2}</h1>
+        <button onClick={()=>{this.setState({ Counter2 : this.state.Counter2+1})}}>Increse</button>
+        <button onClick={()=>{this.setState({ Counter2 : this.state.Counter2-1})}}>Decrese</button>
+        <button onClick={()=>{this.setState({ Counter2 : 0})}}>Reset</button>
+      
+        <h1>Counter 3 = {this.state.Counter3}</h1>
+        <button onClick={()=>{this.setState({ Counter3 : this.state.Counter3+1})}}>Increse</button>
+        <button onClick={()=>{this.setState({ Counter3 : this.state.Counter3-1})}}>Decrese</button>
+        <button onClick={()=>{this.setState({ Counter3 : 0})}}>Reset</button>
+      
+      
+      
+      </center>
+    )
+  }
+}
+export default MyApp;
