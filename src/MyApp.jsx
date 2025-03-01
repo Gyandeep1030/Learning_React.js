@@ -35,8 +35,8 @@ export default App;
 
 */
 
-import { number } from "prop-types";
-import { useRef, useState } from "react";
+
+
 
 /*
 let App = () => {
@@ -847,7 +847,7 @@ export default MyApp;
 */
 
 
-
+/*
 import React from 'react'
 
 class MyApp extends React.Component {
@@ -886,3 +886,86 @@ class MyApp extends React.Component {
   }
 }
 export default MyApp;
+*/
+
+//-------------------------------------------------------------------------------------------------
+
+// ! 
+
+/*
+    Whenever a component is created and inserted into the DOM is called Mounting Phase.
+
+    1. Constructor()
+        a. It is the first method to be called in Mounting Phase
+        b. This method will execute only once after the component Mounted.
+        c. It is the best place to do initializations.
+        d. To use "this" keyword,
+            i. firstly, we have to extend the features of React. Component 
+            ii.We have to pass props as parameter to constructor method
+            iii. we must use super call.
+            iv. "this" keyword will points to the current component.
+        e. By default CBC contains state data.
+        f. To create state data, this.state = object;
+        g. To udpate the state data, this. setState(new state obj)
+
+    2. getDerivedStateFromProps():
+        a. getDerivedStateFromProps) method should be static.
+        b. It will execute just before the render) method.
+        c. It will return the new state data.
+        d. it accepts prev props, prevsate as a paramters.
+        e. It must and should return a valid state object / null.
+
+    3. render()
+        a. It is the only mandatory method in CBC's,
+        b. It will execute for each and every updates.
+        c. render) method allows us to write JSX(html + js);
+        d. It is not the best place to do side effects.
+        e. side effects means the things which are not in react
+            ex - featch , timer.
+    
+    4. componentDidMount():
+        a. componentDidMount) method will work onlyonce after the component is mounted.
+        b. This is the best place to perform side effects.
+        c. prefered to make GET requests here.
+
+
+*/
+
+import React from 'react'
+
+class App extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            Counter1 : 0,
+        }
+
+    }
+    static getDerivedStateFromProps(prevProps, prevState){
+        console.log(prevState);
+        return null
+    }
+
+    componentDidMount(){
+        let getData = async () => {
+            let response = await fetch('https://jshttps://fakestoreapi.com/productsonplaceholder.typicode.com/todos/1')
+            let data = await response.json()
+            console.log(data);
+
+        }
+        getData();
+    }
+    render() { 
+        return (
+            <div>
+                <h1>Counter 1 = {this.state.Counter1}</h1>
+                <button onClick={()=>{this.setState({ Counter1 : this.state.Counter1+1})}}>Increse</button>
+                <button onClick={()=>{this.setState({ Counter1 : this.state.Counter1-1})}}>Decrese</button>
+                <button onClick={()=>{this.setState({ Counter1 : 0})}}>Reset</button>
+            </div>
+        );
+    }
+}
+ 
+export default App;
+    
