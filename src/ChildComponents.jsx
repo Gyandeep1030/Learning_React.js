@@ -17,6 +17,8 @@ let ChildComponent = props => {
 export default ChildComponent;
 */
 
+import React from "react";
+
 // ? === Props Children ====
 /*
 let ChildComponent = props => {
@@ -299,5 +301,27 @@ let Products = (props) => {
 export default Products;
 
 */
+
+
+class ChildComponent extends React.Component {
+
+  constructor(props){
+    super(props);
+    console.log("ChildComponent - constructor");
+  }
+
+  componentWillUnMount(){
+    console.log("ChildComponent - componentWillMount");
+  }
+
+  render() {
+    return (
+      <>
+        <h2>I am ChildComponent</h2>
+      </>
+    );
+  }
+};
+export default ChildComponent;
 
 

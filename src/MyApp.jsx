@@ -931,6 +931,7 @@ export default MyApp;
 
 */
 
+/*----------------------------------------------------------------
 import React from 'react'
 
 class App extends React.Component{
@@ -969,3 +970,125 @@ class App extends React.Component{
  
 export default App;
     
+
+
+
+*/
+
+
+//----------------------------------------------------------------
+
+/*
+//!== Updating Phase ====
+
+    Whenever there some changes in component, react will re-render the component and this phase is called updating phase.
+    changes in props, state.
+
+    ? 1. getDerivedStateFromProps () :
+        This method is as same in Mouting Phase.
+        This method will execute just before the render method.
+        It will provide the static state data.
+        It will return a new object as state data.
+        You, 29 seconds ago • Uncommitted changes
+
+    ? 2. shouldComponentUpdate():
+        This method helps us to improve the performance of an application.
+        It will compare the previous props/states with current props/states.
+        It will return a boolean value.
+        If true, render) method will execute If false, render() method will not execute By default the value is true.
+        Called to determine whether the change in props and state should trigger a re-render.
+        Component always returns true.
+        PureComponent implements a shallow comparison on props and state and returns true if any props or states have changed.
+        If false is returned, Component. render, componentWillUpdate and componentDidUpdate will not be called.
+
+    ? 3. render():
+        As same in mounting phase
+
+
+
+
+*/
+/*
+import React from 'react'
+class app extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { count : 0 };
+    }
+    static getDerivedStateFromProps(prevProps, prevState){
+        console.log(prevState);
+        return null
+    }
+    shouldComponentUpdate(nextProps, nextState){
+        console.log(nextState);
+        return true
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        return prevState;
+
+    }
+    componentDidUpdate(prevProps, prevState, snapshot){
+        console.log(snapshot);
+    }
+
+    componentDidMount(){
+        console.log("Component Mounted");
+    }
+
+    render() { 
+        return ( 
+            <div>
+                <h1>count : {this.state.count}</h1>
+                <button onClick={()=>{this.setState({count : this.state.count+1})}}>Increse</button>
+            </div>
+         );
+    }
+}
+
+export default app;
+
+*/
+
+
+import React from 'react'
+import ChildComponent from './ChildComponents';
+class app extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { count : 0 , mount : true };
+    }
+    static getDerivedStateFromProps(prevProps, prevState){
+        console.log(prevState);
+        return null
+    }
+    shouldComponentUpdate(nextProps, nextState){
+        console.log(nextState);
+        return true
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        return prevState;
+
+    }
+    componentDidUpdate(prevProps, prevState, snapshot){
+        console.log(snapshot);
+    }
+
+    componentDidMount(){
+        console.log("Component Mounted");
+    }
+
+    render() { 
+        return ( 
+            <div>
+                <h1>count : {this.state.count}</h1>
+                <button onClick={()=>{this.setState({count : this.state.count+1})}}>Increse</button>
+                <button onClick={()=>{this.setState({mount :!this.state.mount})}}>Toggle Mount</button>
+                {this.state.mount  ? <ChildComponent/> : null}
+            </div>
+         );
+    }
+}
+
+export default app;
