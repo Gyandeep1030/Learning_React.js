@@ -38,6 +38,7 @@ export default App;
 
 
 
+
 /*
 let App = () => {
     let name = "Gyandeep";
@@ -818,7 +819,7 @@ export default app;
 
 /*
 
-import React from 'react'
+import React from 'react';
 
 class MyApp extends React.Component {
     constructor(props){
@@ -1112,13 +1113,13 @@ export default app;
         axios.delete(url)
 
 */
-
+/*
 import React from 'react'
 import axios from 'axios'
 
 function App() {
 
-    let [data , setData] = React.useState([]);
+    let [products , setData] = React.useState([]);
 
     React.useEffect(() => {
         let getData = async () => {
@@ -1128,67 +1129,193 @@ function App() {
         getData();
     }, [])
 
+    return (
+
+        
+        <div className="bg-white">
+          <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">Products List</h2>
     
-
-
-    return ( <>
-        <h1>Products</h1>
-        <ul>
-
-        <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-
-            {data.map((val , ind) => {
-                return <li key={ind}>
-                    <img src={val.image} alt="img"  />
-                    <li>
-                        {val.title}
-                    </li>
-                        {val.price}
-                    </li>
-            })}
-        </ul>
-    
-    </> );
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {products.map((product) => (
+                <div key={product.id} className="group relative">
+                  <img
+                    alt={product.image}
+                    src={product.image}
+                    className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+                  />
+                  <div className="mt-4 flex justify-between">
+                    <div>
+                      <h3 className="text-sm text-gray-700">
+                        <a href={product.href}>
+                          <span aria-hidden="true" className="absolute inset-0" />
+                          {product.title}
+                        </a>
+                      </h3>
+                      <p className="mt-1 text-sm text-gray-500">{product.category}</p>
+                    </div>
+                    <p className="text-sm font-medium text-gray-900">${product.price}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
 }
 
 export default App;
 
+*/
+/*
+import React from "react";
+import reactDom from "react-dom";
+import port from "./PortTest";
+
+function App() {
+    let [Toggle , setToggle] = React.useState(false);
+    let [Toggle2 , setToggle2] = React.useState(false);
 
 
 
+    return ( 
+    <center>
+
+        <section style={{border : "1px solid black" , padding : "10px"}}>
+             <h1>Hello World!</h1>
+             <button onClick={()=>setToggle(!Toggle)}>Button</button>
+             {Toggle ? <p>Toggle is on</p> : null}
+        </section>
 
 
+        <section style={{border : "1px solid black" , padding : "10px"}}>
+            
+             <h1>Hello World!</h1>
+             <button onClick={()=>setToggle2(!Toggle2)}>Button</button>
+             {Toggle2 ? reactDom.createPortal(<port></port> , document.getElementById("portal")) : null}
+        </section>
+    </center> 
+    );
+}
+
+export default App;
+
+*/
+/*
+import React from "react";
+import ReactDOM from "react-dom";
+import Port from "./PortTest";
+import style from "./PortTest.module.css";
 
 
+function App() {
+    let [button, setbutton] = useState(false)
 
+    return ( 
+        <center>
+            <h1>I am Main Screen</h1>
+                <br />
+            <button onClick={() => setbutton(!button)}>{button ? "X" : "Sign In"}</button>
+            <div className={style.login}> 
+                {button ? ReactDOM.createPortal(<Port ></Port>, document.getElementById("portal")) : null}
+            </div>
+           
+            
+        </center>
+     );
+}
 
+export default App;
 
+*/
 
+/*
+import PureParent from "./Pure Component/PureParent";
+const App = () => {
 
-<div class="bg-white">
-  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+    return ( 
+        <>
+            <PureParent/>
 
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      <div class="group relative">
-        <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-gray-700">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Basic Tee
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">Black</p>
-          </div>
-          <p class="text-sm font-medium text-gray-900">$35</p>
-        </div>
-      </div>
+        </>
+     );
+}
 
-      <!-- More products... -->
-    </div>
-  </div>
-</div>
+export default App;
+*/
+
+/*
+import React from "react";
+import { useState , useMemo } from "react";
+const App = () => {
+
+    let [Counter1 , setCounter1] = useState(0);
+    let [Counter2 , setCounter2] = useState(0);
+
+    let isEven = useMemo(())
+
+    return ( 
+        <>
+            <center>
+                <h1>Counter 1 : {Counter1}</h1>
+                <button onClick={() => setCounter1(Counter1+1)}>Increment</button>
+                <button onClick={() => setCounter1(Counter1-1)}>Decrement</button>
+                <button onClick={() => setCounter1(0)}>Reset</button>
+                <br/>
+                <br/>
+                <h1>Counter 2 : {Counter2}</h1>
+                <button onClick={() => setCounter2(Counter2+1)}>Increment</button>
+                <button onClick={() => setCounter2(Counter2-1)}>Decrement</button>
+                <button onClick={() => setCounter2(0)}>Reset</button>
+            </center>
+        </>
+     );
+}
+
+export default App;
+
+*/
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Login from "./Pages/LogIn";
+import HR from "./Pages/HR";
+import Manager from "./Pages/Manager";
+import Emp from "./Pages/Emp";
+import Dashboard from "./Pages/Dashboard";
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        
+
+        <Routes>
+            <Route path="/" element={<Dashboard />}>
+            <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />}> 
+            <Route path="HR" element={<HR />}/> 
+            <Route path="Manager" element={<Manager />}/> 
+            <Route path="Emp" element={<Emp />}/> 
+            </Route>
+          <Route path="/contact" element={<Contact />} >
+            <Route path="ContactHR" element={<HR />}/> 
+            <Route path="ContactManager" element={<Manager />}/> 
+            <Route path="ContactEmp" element={<Emp />}/> 
+            </Route>
+          <Route path="/login" element={<Login />} />
+            </Route>
+
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
+
+export default App;

@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import MyApp from "./MyApp"
-import "./Index.css"
+import "./index.css";
+
 
 console.log(React); // This is responsible for all react inbuilts functinns
 console.log(ReactDOM); // This is responsible of rendering the react content into DOM.
